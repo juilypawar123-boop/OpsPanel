@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Payments - OpsPanel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="billing-page">
+
+    <header class="top-navbar">
+        <div class="logo">OpsPanel</div>
+        <div class="global-actions">
+            <div class="menu-dropdown">
+                <span class="menu-title">Menu ▼</span>
+                <div class="dropdown-content">
+                    <a href="dashboard.html">Home</a>
+                    <a href="user-management.html">User Management</a>
+                    <a href="billing.html">Billing</a>
+                    <a href="logs&audit.html">Logs & Audit</a>
+                    <a href="analytics.html">Analytics</a>
+                    <a href="notifications.html">Notifications</a>
+                </div>
+            </div>
+            <div class="notifications">
+                <span class="bell">🔔</span>
+                <span class="badge">3</span>
+            </div>
+            <div class="user-dropdown">
+                <span class="avatar">JP</span>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h1>Billing & Payments</h1>
+
+        <div class="billing-cards">
+            <div class="billing-card">
+                <h3>Active Plans</h3>
+                <p id="activePlans">0</p>
+            </div>
+            <div class="billing-card">
+                <h3>Revenue Today</h3>
+                <p id="revenueToday">€0</p>
+            </div>
+            <div class="billing-card">
+                <h3>Pending Payments</h3>
+                <p id="pendingPayments">0</p>
+            </div>
+            <div class="billing-card">
+                <h3>Total Revenue</h3>
+                <p id="totalRevenue">€0</p>
+            </div>
+        </div>
+
+        <div class="billing-filters">
+            <select id="filterPlanType">
+                <option value="">All Plans</option>
+                <option value="Basic">Basic</option>
+                <option value="Premium">Premium</option>
+            </select>
+
+            <select id="filterPaymentStatus">
+                <option value="">All Status</option>
+                <option value="Paid">Paid</option>
+                <option value="Pending">Pending</option>
+                <option value="Failed">Failed</option>
+            </select>
+
+            <input type="date" id="filterStartDate">
+            <input type="date" id="filterEndDate">
+
+            <input type="text" id="searchBilling" placeholder="Search by user or plan">
+        </div>
+
+        <div class="transactions-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Plan</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="billingTableBody">
+                </tbody>
+            </table>
+        </div>
+
+    
+        <div class="modal" id="planModal">
+            <div class="modal-content">
+                <h2>Add / Update Plan</h2>
+                <form id="planForm">
+                    <div class="form-group">
+                        <input type="text" id="planName" required placeholder=" ">
+                        <label for="planName">Plan Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="planPrice" required placeholder=" ">
+                        <label for="planPrice">Price (€)</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="planDuration" required placeholder=" ">
+                        <label for="planDuration">Duration (e.g., 1 month)</label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" id="cancelPlanBtn" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <button id="addPlanBtn" class="btn btn-primary">Add Plan</button>
+
+    </main>
+
+    <script src="js/billing.js"></script>
+</body>
+</html>

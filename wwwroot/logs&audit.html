@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs & Audit Panel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    
+    <header class="top-navbar">
+        <div class="logo">OpsPanel</div>
+        <div class="global-actions">
+            <div class="menu-dropdown">
+                <span class="menu-title">Menu ▼</span>
+                <div class="dropdown-content">
+                    <a href="dashboard.html">Home</a>
+                    <a href="user-management.html">User Management</a>
+                    <a href="billing.html">Billing</a>
+                    <a href="logs&audit.html">Logs & Audit</a>
+                    <a href="analytics.html">Analytics</a>
+                    <a href="notifications.html">Notifications</a>
+                </div>
+            </div>
+            <div class="notifications">
+                <span class="bell">🔔</span>
+                <span class="badge">3</span>
+            </div>
+            <div class="user-dropdown">
+                <span class="avatar">JP</span>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header>
+        <h1>Logs & Audit Panel</h1>
+    </header>
+
+    <div class="logs-audit">
+        <div class="audit-grid">
+
+            <aside class="audit-sidebar">
+
+                <section class="filters">
+                    <h3>Filters</h3>
+
+                    <label for="startDate">Date From</label>
+                    <input type="date" id="startDate" />
+
+                    <label for="endDate">Date To</label>
+                    <input type="date" id="endDate" />
+
+                    <label for="userFilter">User</label>
+                    <select id="userFilter">
+                        <option value="">All Users</option>
+                    </select>
+
+                    <label for="moduleFilter">Module</label>
+                    <select id="moduleFilter">
+                        <option value="">All Modules</option>
+                    </select>
+
+                    <button id="searchBtn" class="btn-search">Search Logs</button>
+                    <button id="exportBtn" class="btn-export">Export Logs</button>
+                </section>
+
+                <section class="alerts">
+                    <h3>Real-Time Alerts</h3>
+                    <div id="alertList"></div>
+                </section>
+
+            </aside>
+
+            <main class="audit-main">
+
+                <section class="table-section">
+                    <div class="table-header">Activity Logs</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Module</th>
+                                <th>IP</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logTableBody"></tbody>
+                    </table>
+                </section>
+
+                <section class="chart">
+                    <h3>Log Frequency by Module</h3>
+                    <canvas id="logChart"></canvas>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script src="js/logs.js"></script>
+</body>
+</html>

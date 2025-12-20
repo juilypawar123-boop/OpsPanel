@@ -1,0 +1,6 @@
+@OpsPanel_HostAddress = http://localhost:5012
+
+GET {{OpsPanel_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

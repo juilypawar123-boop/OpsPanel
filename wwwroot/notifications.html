@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications & Alerts | OpsPanel</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="alerts-page">
+
+    <!-- Top Navbar -->
+    <header class="top-navbar">
+        <div class="logo">OpsPanel</div>
+        <div class="global-actions">
+            <div class="menu-dropdown">
+                <span class="menu-title">Menu ▼</span>
+                <div class="dropdown-content">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="user-management.html">User Management</a>
+                    <a href="billing.html">Billing</a>
+                    <a href="logs&audit.html">Logs & Audit</a>
+                    <a href="analytics.html">Analytics</a>
+                    <a href="notifications.html">Notifications</a>
+                </div>
+            </div>
+            <div class="notifications">
+                <span class="bell">🔔</span>
+                <span class="badge" id="notificationCount">0</span>
+            </div>
+            <div class="user-dropdown">
+                <span class="avatar">JP</span>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <h1>Notifications & Alerts</h1>
+
+        <div class="kpi-cards">
+            <div class="card">
+                <h3>Total Alerts</h3>
+                <p id="totalAlerts">0</p>
+            </div>
+            <div class="card">
+                <h3>Unacknowledged</h3>
+                <p id="unackAlerts">0</p>
+            </div>
+            <div class="card">
+                <h3>High Severity</h3>
+                <p id="highSeverityCount">0</p>
+            </div>
+        </div>
+
+        <section class="filters">
+            <select id="severityFilter">
+                <option value="">All Severities</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button id="resolveAllBtn" class="btn btn-primary">Resolve All</button>
+        </section>
+
+        <section class="alerts-cards" id="alertsContainer">
+           
+        </section>
+
+    </main>
+
+    <script src="js/alerts.js"></script>
+</body>
+</html>

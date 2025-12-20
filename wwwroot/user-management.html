@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management | OpsPanel</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-navbar">
+        <div class="logo">OpsPanel</div>
+        <div class="global-actions">
+            <div class="menu-dropdown">
+                <span class="menu-title">Menu ▼</span>
+                <div class="dropdown-content">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="user-management.html">User Management</a>
+                    <a href="billing.html">Billing</a>
+                    <a href="logs&audit.html">Logs & Audit</a>
+                    <a href="analytics.html">Analytics</a>
+                    <a href="notifications.html">Notifications</a>
+                </div>
+            </div>
+            <div class="notifications">
+                <span class="bell">🔔</span>
+                <span class="badge">3</span>
+            </div>
+            <div class="user-dropdown">
+                <span class="avatar">JP</span>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <aside class="context-panel">
+            <div class="filter-section">
+                <input type="text" id="searchUser" placeholder="Search by name/email">
+            </div>
+            <div class="filter-section">
+                <select id="roleFilter">
+                    <option value="">All Roles</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Guest">Guest</option>
+                </select>
+            </div>
+            <div class="filter-section">
+                <select id="statusFilter">
+                    <option value="">All Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+            <div class="filter-section">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate">
+            </div>
+            <div class="filter-section">
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate">
+            </div>
+        </aside>
+
+        <main class="workspace">
+            <div class="kpi-cards">
+                <div class="card"><h3>Total Users</h3><p id="totalUsers">0</p></div>
+                <div class="card"><h3>Active Users</h3><p id="activeUsers">0</p></div>
+                <div class="card"><h3>Admins</h3><p id="adminCount">0</p></div>
+                <div class="card"><h3>Guests</h3><p id="guestCount">0</p></div>
+            </div>
+
+            <button id="addUserBtn" class="btn btn-primary">Add User</button>
+
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Status</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                   
+                </tbody>
+            </table>
+        </main>
+    </main>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form id="userForm">
+                <label>Name:</label>
+                <input type="text" id="userName" required>
+
+                <label>Email:</label>
+                <input type="email" id="userEmail" required>
+
+                <label>Role:</label>
+                <select id="userRole">
+                    <option value="Admin">Admin</option>
+                    <option value="Guest">Guest</option>
+                </select>
+
+                <label>Status:</label>
+                <select id="userStatus">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                    <option value="Suspended">Suspended</option>
+                </select>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" id="cancelUserBtn" class="btn btn-secondary">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/user-management.js"></script>
+</body>
+</html>
