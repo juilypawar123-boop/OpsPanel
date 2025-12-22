@@ -57,5 +57,6 @@ OpsPanel is a responsive, data-driven SaaS dashboard application designed to man
 **Tools**: Visual Studio, VS Code
 
 **Software Developer**
+
 Juily Pawar
 juilypawar123@gmail.com
