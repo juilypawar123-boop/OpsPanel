@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -35,6 +35,78 @@
                 </div>
             </div>
         </div>
+    </header>
+
+    <header>
+        <h1>Logs & Audit Panel</h1>
+    </header>
+
+    <div class="logs-audit">
+        <div class="audit-grid">
+
+            <aside class="audit-sidebar">
+
+                <section class="filters">
+                    <h3>Filters</h3>
+
+                    <label for="startDate">Date From</label>
+                    <input type="date" id="startDate" />
+
+                    <label for="endDate">Date To</label>
+                    <input type="date" id="endDate" />
+
+                    <label for="userFilter">User</label>
+                    <select id="userFilter">
+                        <option value="">All Users</option>
+                    </select>
+
+                    <label for="moduleFilter">Module</label>
+                    <select id="moduleFilter">
+                        <option value="">All Modules</option>
+                    </select>
+
+                    <button id="searchBtn" class="btn-search">Search Logs</button>
+                    <button id="exportBtn" class="btn-export">Export Logs</button>
+                </section>
+
+                <section class="alerts">
+                    <h3>Real-Time Alerts</h3>
+                    <div id="alertList"></div>
+                </section>
+
+            </aside>
+
+            <main class="audit-main">
+
+                <section class="table-section">
+                    <div class="table-header">Activity Logs</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Module</th>
+                                <th>IP</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logTableBody"></tbody>
+                    </table>
+                </section>
+
+                <section class="chart">
+                    <h3>Log Frequency by Module</h3>
+                    <canvas id="logChart"></canvas>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script src="js/logs.js"></script>
+</body>
+</html>        </div>
     </header>
 
     <header>
