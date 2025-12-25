@@ -4,6 +4,8 @@
 
 OpsPanel is a responsive, data-driven SaaS dashboard application designed to manage users, billing, analytics, logs, and notifications. Built with full-stack web technologies, it provides interactive dashboards, KPI tracking, and user management tools for enterprises.
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 **Features**
 
 **Dashboard**
@@ -46,6 +48,7 @@ OpsPanel is a responsive, data-driven SaaS dashboard application designed to man
 
 - Fully responsive UI with modular CSS
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Tech Stack**
 
 **Front-End**: HTML5, CSS3, JavaScript, Chart.js
@@ -56,7 +59,10 @@ OpsPanel is a responsive, data-driven SaaS dashboard application designed to man
 
 **Tools**: Visual Studio, VS Code
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 **Software Developer**
 
 Juily Pawar
+
 juilypawar123@gmail.com
