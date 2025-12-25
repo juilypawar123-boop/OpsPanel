@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,81 @@
                 </div>
             </div>
         </div>
+    </header>
+
+    <main class="main-container">
+
+        <aside class="context-panel">
+            <h3>Filters</h3>
+            <label for="analyticsStartDate">Start Date</label>
+            <input type="date" id="analyticsStartDate">
+            <label for="analyticsEndDate">End Date</label>
+            <input type="date" id="analyticsEndDate">
+
+            <label for="filterModule">Module</label>
+            <select id="filterModule">
+                <option value="">All Modules</option>
+            </select>
+
+            <label for="filterTenant">Tenant</label>
+            <select id="filterTenant">
+                <option value="">All Tenants</option>
+            </select>
+
+            <label for="filterPlan">Plan</label>
+            <select id="filterPlan">
+                <option value="">All Plans</option>
+            </select>
+
+            <button class="btn btn-primary" id="applyFiltersBtn">Apply Filters</button>
+        </aside>
+
+        <section class="workspace">
+
+            <div class="kpi-cards">
+                <div class="card">
+                    <h3>Total Users</h3>
+                    <p id="kpiTotalUsers">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Transactions</h3>
+                    <p id="kpiTotalTransactions">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Revenue</h3>
+                    <p id="kpiTotalRevenue">€0</p>
+                </div>
+            </div>
+
+            <div class="charts">
+                <div class="chart-container">
+                    <h4>Users per Module</h4>
+                    <canvas id="usersPerModuleChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h4>Transactions Over Time</h4>
+                    <canvas id="transactionsOverTimeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h4>Revenue by Subscription</h4>
+                    <canvas id="revenueByPlanChart"></canvas>
+                </div>
+            </div>
+
+            <div class="export-buttons" style="margin-top:20px;">
+                <button class="btn btn-primary" id="exportPDF">Download PDF</button>
+                <button class="btn btn-primary" id="exportCSV">Download CSV</button>
+                <button class="btn btn-primary" id="exportXLSX">Download XLSX</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/analytics.js"></script>
+</body>
+</html>
     </header>
 
     <main class="main-container">
