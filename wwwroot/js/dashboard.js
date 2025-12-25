@@ -1,4 +1,4 @@
-﻿
+
 // === DOM References ===
 const totalUsersEl = document.getElementById("totalUsers");
 const activeSessionsEl = document.getElementById("activeSessions");
