@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,47 @@
                     <a href="#">Logout</a>
                 </div>
             </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <h1>Notifications & Alerts</h1>
+
+        <div class="kpi-cards">
+            <div class="card">
+                <h3>Total Alerts</h3>
+                <p id="totalAlerts">0</p>
+            </div>
+            <div class="card">
+                <h3>Unacknowledged</h3>
+                <p id="unackAlerts">0</p>
+            </div>
+            <div class="card">
+                <h3>High Severity</h3>
+                <p id="highSeverityCount">0</p>
+            </div>
+        </div>
+
+        <section class="filters">
+            <select id="severityFilter">
+                <option value="">All Severities</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button id="resolveAllBtn" class="btn btn-primary">Resolve All</button>
+        </section>
+
+        <section class="alerts-cards" id="alertsContainer">
+           
+        </section>
+
+    </main>
+
+    <script src="js/alerts.js"></script>
+</body>
+</html>
         </div>
     </header>
 
