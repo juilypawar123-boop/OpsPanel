@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    Notifications / Alerts JS (Card Layout, Persistent)
 ========================================================= */
 
@@ -59,6 +59,22 @@ resolveAllBtn.addEventListener("click", () => {
 
     alerts = alerts.map(a => ({ ...a, acknowledged: true }));
     saveAlerts();
+    renderAlerts();
+});
+
+severityFilter.addEventListener("change", renderAlerts);
+
+
+function updateKPIs() {
+    totalAlertsEl.textContent = alerts.length;
+    unackAlertsEl.textContent = alerts.filter(a => !a.acknowledged).length;
+    highSeverityCountEl.textContent = alerts.filter(a => a.severity === "High").length;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateKPIs();
+    renderAlerts();
+});
     renderAlerts();
 });
 
