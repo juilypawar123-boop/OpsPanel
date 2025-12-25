@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,6 +58,75 @@
             </div>
         </div>
 
+        <div class="billing-filters">
+            <select id="filterPlanType">
+                <option value="">All Plans</option>
+                <option value="Basic">Basic</option>
+                <option value="Premium">Premium</option>
+            </select>
+
+            <select id="filterPaymentStatus">
+                <option value="">All Status</option>
+                <option value="Paid">Paid</option>
+                <option value="Pending">Pending</option>
+                <option value="Failed">Failed</option>
+            </select>
+
+            <input type="date" id="filterStartDate">
+            <input type="date" id="filterEndDate">
+
+            <input type="text" id="searchBilling" placeholder="Search by user or plan">
+        </div>
+
+        <div class="transactions-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Plan</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="billingTableBody">
+                </tbody>
+            </table>
+        </div>
+
+    
+        <div class="modal" id="planModal">
+            <div class="modal-content">
+                <h2>Add / Update Plan</h2>
+                <form id="planForm">
+                    <div class="form-group">
+                        <input type="text" id="planName" required placeholder=" ">
+                        <label for="planName">Plan Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="planPrice" required placeholder=" ">
+                        <label for="planPrice">Price (€)</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="planDuration" required placeholder=" ">
+                        <label for="planDuration">Duration (e.g., 1 month)</label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" id="cancelPlanBtn" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <button id="addPlanBtn" class="btn btn-primary">Add Plan</button>
+
+    </main>
+
+    <script src="js/billing.js"></script>
+</body>
+</html>
         <div class="billing-filters">
             <select id="filterPlanType">
                 <option value="">All Plans</option>
